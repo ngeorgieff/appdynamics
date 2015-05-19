@@ -8,7 +8,7 @@ class appdynamics (
   $appd_user            = 'appdyn',
   $appd_network         = 'testNetwork',
   $appd_version         = '3.8.4',
-  $appd_home            = '/opt/AppDyamics',
+  $appd_home            = '/opt/AppDynamics',
   $AppServerAgent_url   = 'https://repo.it.company.com/artifactory/its-appdynamics/AppDynamics/AppServerAgent',
   $MachineAgent_url     = 'https://repo.it.company.com/artifactory/its-appdynamics/AppDynamics/MachineAgent',
   $unique_hostid        = 'server_hostname1',
