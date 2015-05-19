@@ -1,0 +1,15 @@
+<% if ig_environment_uc =~ /^NADEX_/ -%>
+AD_hostName=<%= appd_controller %>.<%= nadex_environment %>.iggroup.local
+<% else -%>
+AD_hostName=<%= appd_controller %>.<%= ig_environment %>.iggroup.local
+<% end -%>
+AD_port=<%= appd_controller_port %>
+AD_applicationName=<%= appd_app_name %>
+AD_tierName=<%= platform %>
+<% if use_long_unique_hostid != '' -%>
+AD_useLongUniqueId=<%= use_long_unique_hostid %>
+<% end -%>
+<% if unique_hostid != '' -%>
+AD_hostId=<%= unique_hostid %>
+<% end -%>
+AD_maxMetrics=<%= appd_maxMetrics %>

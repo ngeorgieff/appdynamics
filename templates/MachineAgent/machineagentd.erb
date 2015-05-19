@@ -1,0 +1,33 @@
+#!/bin/sh
+# -----------------------------------------------------------------------------
+# Typical AppDynamics Machine Agent Startup
+# -----------------------------------------------------------------------------
+# machineagent
+#
+# chkconfig: 345 20 80
+# description: Start up the Machine Agent.
+
+# Set to the agent's install directory
+JAVA=/usr/bin/java
+
+# Set to the agent's install directory
+AGENT_HOME=/opt/AppDynamics/MachineAgent/Current
+AGENT="$AGENT_HOME/machineagent.jar"
+
+# Agent Options
+# Uncomment and make available as needed
+# -Dappdynamics.agent.applicationName   : application that the agent participates in
+# -Dappdynamics.agent.logging.dir       : directory to put logs (agent "user" must have write permissions
+# -Dmetric.http.listener=true | false   : open a kill port
+# -Dmetric.http.listener.port     : the port to send kill messages
+
+AGENT_OPTIONS=
+#AGENT_OPTIONS="$AGENT_OPTIONS -Dappdynamics.agent.applicationName=<application-name>"
+#AGENT_OPTIONS="$AGENT_OPTIONS -Dappdynamics.agent.logging.dir="
+#AGENT_OPTIONS="$AGENT_OPTIONS -Dmetric.http.listener=true | false
+#AGENT_OPTIONS="$AGENT_OPTIONS -Dmetric.http.listener.port=<port>"
+
+#Consolidation Step - allows you to easily add or remove the agent
+#Call the nohup $JAVA $AGENT_OPTIONS -jar $AGENT &
+nohup $JAVA -jar $AGENT &
+
